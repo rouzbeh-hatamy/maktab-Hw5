@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>change range</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>enter the values</h1>
+    number between 1 to 100:<input type="number" id="num" value="25"><br /><br />
+    range between 1 to : <input type="number" id="range" value="70"><br /><br />
+    <button onclick="changeRange()">click to start</button>
+    <h1 id="result"></h1>
+    <script>
+        let result = document.getElementById("result");
+
+        function changeRange() {
+            let r1 = document.getElementById("range").value;
+            let num1 = document.getElementById("num").value;
+            let array = Array.from(Array(101).keys())
+            let r2 = 100 / r1;
+            let num2 = Number(num1)
+            let num3 = array.indexOf(num2)
+            let map = array.map(index => index / r2)
+            let final = map[num3]
+            result.innerHTML = num1+ "  in (1~100) Range;  is  "+ final + "    in (1~"+r1+") Range"
+        }
+    </script>
+</body>
+
+</html>

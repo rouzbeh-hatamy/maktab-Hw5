@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <div id="show"></div>
+  <button onclick="random(1000,59999)">click me</button>
+
+  <script async defer>
+    const arrayOfNums = []
+    function random(num1, num2) {
+      debugger;
+      
+      let show = document.getElementById("show")
+
+      if (num2 > num1) {
+        let finalNum = Math.floor(Math.random() * (num2 - num1 + 1) + num1);
+        if (arrayOfNums.includes(finalNum)) {
+          random(1000, 59999)
+        } else {
+          show.innerText = finalNum
+          arrayOfNums.push(finalNum)
+        }
+      } else {
+        let finalNum = Math.floor(Math.random() * (num1 - num2 + 1) + num2);
+        if (arrayOfNums.includes(finalNum)) {
+          random(1000, 59999)
+        } else {
+          show.innerText = finalNum
+          arrayOfNums.push(finalNum)
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
